@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+header {
+  height: 300px;
+  text-align: center;
+  font-size: 42px;
+  padding-top: 50px;
+  width: 100%;
+  border: 2px black solid;
+}
+
+.flexBox {
+  display: flex;
+}
+
+main {
+  flex: 5;
+  text-align: center;
+}
+
+.sideBar {
+  flex: 1;
+  text-align: center;
+
+}
+
+.note {
+  border: 1px solid black;
+  margin: 10px 10px;
+  padding: 5px;
+}
+
+.folder {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
