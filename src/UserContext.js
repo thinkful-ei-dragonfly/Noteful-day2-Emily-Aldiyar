@@ -49,16 +49,22 @@ export class UserProvider extends React.Component {
       ]
     })
   }
-
-  handleDeleteNote = note => {
-
+  
+  deleteNote = noteId => {
+    console.log('delete note from context')
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== noteId)
+    })
+    
   }
+
 
   render() {
     const values = {
       notes: this.state.notes,
       folders: this.state.folders,
       handleAddFolder: this.handleAddFolder,
+      deleteNote: this.deleteNote,
     }
     return (
       <UserContext.Provider value={values}>
