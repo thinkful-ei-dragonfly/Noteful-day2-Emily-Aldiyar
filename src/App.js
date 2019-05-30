@@ -18,8 +18,8 @@ class App extends React.Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/notes`)
-      fetch(`${config.API_ENDPOINT}/folders`)
+      fetch(`${config.API_ENDPOINT}/notes`),
+      fetch(`${config.API_ENDPOINT}/folders`),
     ])
       .then(([notesRes,foldersRes]) => {
         if (!notesRes.ok)
@@ -32,13 +32,23 @@ class App extends React.Component {
           foldersRes.json(),
         ])
       })
-      .then(([notes,folder]) => m{
+      .then(([notes,folders]) => {
         this.setState({notes,folders})
       })
       .catch(error => {
         console.error({error})
       })
+
   }
+
+       handleAddFolder = folder => {
+         this.setState({
+           folders: [
+             ...this.state.folders,
+             folder
+           ]
+         })
+       }
 
   render() {
     return (
